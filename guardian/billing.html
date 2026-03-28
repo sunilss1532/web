@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian Portal | TRANQUIL RETREAT Bills</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body style="background-color: var(--bg-color);">
+
+    <!-- Sidebar / Top Menu -->
+    <aside class="sidebar" style="margin-bottom: 2rem;">
+        <div class="sidebar-header">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="nav-brand" style="margin:0; font-size: 1.25rem;">
+                    <img src="../images/logo.png" alt="Tranquil Retreat Logo" style="height: 32px;"> TRANQUIL RETREAT
+                </a>
+                <span class="badge badge-primary md-hidden">Guardian View</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav flex-col">
+            <a href="dashboard.html" class="sidebar-link"><i class="ph ph-chart-line-up text-lg"></i> Daily Track</a>
+            <a href="medical-records.html" class="sidebar-link"><i class="ph ph-file-text text-lg"></i> Medical Records</a>
+            <a href="care-team.html" class="sidebar-link"><i class="ph ph-users text-lg"></i> Care Team</a>
+            <a href="billing.html" class="sidebar-link active"><i class="ph ph-invoice text-lg"></i> Billing</a>
+        </nav>
+        <div class="p-4" style="border-top: 1px solid var(--border);">
+            <div class="flex items-center gap-4">
+                <span class="font-semibold text-sm md-hidden">Welcome, John S.</span>
+                <a href="../login.html" class="sidebar-link text-danger" style="margin: 0; padding: 0.5rem;"><i class="ph ph-sign-out text-lg"></i> Logout</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="container grid md-grid-cols-1 gap-8" style="grid-template-columns: 350px 1fr; align-items: start; margin-bottom: 4rem;">
+        
+        <!-- Patient Sidebar Info -->
+        <div class="card" style="position: sticky; top: 100px;">
+            <div class="flex flex-col items-center text-center pb-6 mb-6" style="border-bottom: 1px solid var(--border);">
+                <div class="avatar mb-4" style="width: 80px; height: 80px; font-size: 2rem; background: var(--secondary-light); color: var(--secondary);">MS</div>
+                <h2 class="mb-1 text-lg">Martha Stewart</h2>
+                <p class="mb-2 text-sm text-muted">Current Location: Ward A, Bed 102</p>
+                <span class="badge badge-success">Overall Status: Stable</span>
+            </div>
+            
+            <div class="flex flex-col gap-4 text-sm">
+                <div class="flex items-center gap-3">
+                    <i class="ph-fill ph-user-md text-primary text-xl"></i>
+                    <div>
+                        <span class="block font-semibold">Attending Prescriber</span>
+                        <span class="text-muted">Dr. Sarah Jenkins</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="ph-fill ph-calendar text-primary text-xl"></i>
+                    <div>
+                        <span class="block font-semibold">Admission Date</span>
+                        <span class="text-muted">Oct 14, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Billing Area -->
+        <div>
+            <h2 class="mb-2">Financials & Invoices</h2>
+            <p class="mb-8">Review the billing cycles, download finalized invoices, and make secure online transactions directly to the hospital.</p>
+
+            <!-- Pending Action Alert -->
+            <div style="background: #fee2e2; border-left: 4px solid var(--danger); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+                <div class="flex justify-between items-center md-flex-col gap-4">
+                    <div>
+                        <h4 class="mb-1 text-danger flex items-center gap-2"><i class="ph-fill ph-warning-circle"></i> Unpaid Invoice Pending</h4>
+                        <p class="text-sm mb-0">Invoice #INV-2041 (Generated Oct 22, 2026) is due in 3 days. Total Amount: <strong>₹1,200.00</strong></p>
+                    </div>
+                    <button class="btn btn-danger" onclick="toggleModal('payModal')">Pay Securely via Card</button>
+                </div>
+            </div>
+
+            <div class="card p-0">
+                <div class="p-6" style="border-bottom: 1px solid var(--border);">
+                    <h3 class="mb-0 text-lg">Invoice History</h3>
+                </div>
+                <div class="table-container" style="border: none; box-shadow: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Invoice Number</th>
+                                <th>Date Generated</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">#INV-2041</td>
+                                <td>Oct 22, 2026</td>
+                                <td class="font-semibold">₹1,200.00</td>
+                                <td><span class="badge" style="background: #fef3c7; color: #d97706;">Pending</span></td>
+                                <td>
+                                    <div class="flex gap-2">
+                                        <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.8rem;"><i class="ph ph-download-simple"></i> PDF</button>
+                                        <button class="btn btn-danger" style="padding: 0.25rem 0.6rem; font-size: 0.8rem;" onclick="toggleModal('payModal')">Pay Now</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">#INV-1902</td>
+                                <td>Oct 14, 2026</td>
+                                <td class="font-semibold">₹2,450.00</td>
+                                <td><span class="badge badge-success">Paid</span></td>
+                                <td>
+                                    <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.8rem;"><i class="ph ph-receipt"></i> Receipt</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">#INV-1888</td>
+                                <td>Oct 01, 2026</td>
+                                <td class="font-semibold">₹850.00</td>
+                                <td><span class="badge badge-success">Paid</span></td>
+                                <td>
+                                    <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.8rem;"><i class="ph ph-receipt"></i> Receipt</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal-overlay" id="payModal">
+        <div class="modal card">
+            <div class="modal-header">
+                <h3>Secure Checkout</h3>
+                <button class="modal-close" onclick="toggleModal('payModal')"><i class="ph ph-x"></i></button>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('Payment successfully processed! Receipt generated.'); toggleModal('payModal');">
+                <div class="p-4 mb-4 text-center" style="background: var(--surface-hover); border-radius: var(--radius-md);">
+                    <p class="text-sm font-semibold mb-0">Total Due Amount</p>
+                    <h2 class="text-primary mt-1">₹1,200.00</h2>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Name on Card</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="form-group mb-6">
+                    <label class="form-label">Card Number</label>
+                    <input type="text" class="form-control" placeholder="0000 0000 0000 0000" required>
+                </div>
+                <div class="grid grid-cols-2 md-grid-cols-1 gap-4 mb-6">
+                    <div class="form-group">
+                        <label class="form-label">Expiry (MM/YY)</label>
+                        <input type="text" class="form-control" placeholder="12/28" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">CVV</label>
+                        <input type="password" class="form-control" placeholder="***" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" style="padding: 1rem;"><i class="ph ph-lock-key"></i> Pay ₹1,200.00 Safely</button>
+                <p class="text-center text-xs text-muted mt-4"><i class="ph ph-shield-check"></i> TRANQUIL RETREAT uses 256-bit bank-grade encryption</p>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../js/app.js"></script>
+</body>
+</html>

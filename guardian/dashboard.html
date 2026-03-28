@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian Portal | TRANQUIL RETREAT Updates</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .timeline { position: relative; max-width: 800px; margin: 2rem 0; }
+        .timeline::before {
+            content: ''; position: absolute; left: 18px; top: 0; bottom: 0; width: 2px;
+            background: var(--border);
+        }
+        .timeline-item { position: relative; padding-left: 3rem; margin-bottom: 2rem; }
+        .timeline-icon {
+            position: absolute; left: 0; top: 0; width: 38px; height: 38px;
+            border-radius: 50%; background: var(--primary-light); color: var(--primary);
+            display: flex; align-items: center; justify-content: center; font-size: 1.25rem;
+            border: 4px solid var(--surface); box-shadow: var(--shadow-sm); z-index: 10;
+        }
+        .timeline-content {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+<body style="background-color: var(--bg-color);">
+
+    <!-- Sidebar / Top Menu -->
+    <aside class="sidebar" style="margin-bottom: 2rem;">
+        <div class="sidebar-header">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="nav-brand" style="margin:0; font-size: 1.25rem;">
+                    <img src="../images/logo.png" alt="Tranquil Retreat Logo" style="height: 32px;"> TRANQUIL RETREAT
+                </a>
+                <span class="badge badge-primary md-hidden">Guardian View</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav flex-col">
+            <a href="dashboard.html" class="sidebar-link active"><i class="ph ph-chart-line-up text-lg"></i> Daily Track</a>
+            <a href="medical-records.html" class="sidebar-link"><i class="ph ph-file-text text-lg"></i> Medical Records</a>
+            <a href="care-team.html" class="sidebar-link"><i class="ph ph-users text-lg"></i> Care Team</a>
+            <a href="billing.html" class="sidebar-link"><i class="ph ph-invoice text-lg"></i> Billing</a>
+        </nav>
+        <div class="p-4" style="border-top: 1px solid var(--border);">
+            <div class="flex items-center gap-4">
+                <span class="font-semibold text-sm md-hidden">Welcome, John S.</span>
+                <a href="../login.html" class="sidebar-link text-danger" style="margin: 0; padding: 0.5rem;"><i class="ph ph-sign-out text-lg"></i> Logout</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="container grid md-grid-cols-1 gap-8" style="grid-template-columns: 350px 1fr; align-items: start;">
+        
+        <!-- Patient Sidebar Info -->
+        <div class="card" style="position: sticky; top: 100px;">
+            <div class="flex flex-col items-center text-center pb-6 mb-6" style="border-bottom: 1px solid var(--border);">
+                <div class="avatar mb-4" style="width: 80px; height: 80px; font-size: 2rem; background: var(--secondary-light); color: var(--secondary);">MS</div>
+                <h2 class="mb-1 text-lg">Martha Stewart</h2>
+                <p class="mb-2 text-sm text-muted">Current Location: Ward A, Bed 102</p>
+                <span class="badge badge-success">Overall Status: Stable</span>
+            </div>
+            
+            <div class="flex flex-col gap-4 text-sm">
+                <div class="flex items-center gap-3">
+                    <i class="ph-fill ph-user-md text-primary text-xl"></i>
+                    <div>
+                        <span class="block font-semibold">Attending Prescriber</span>
+                        <span class="text-muted">Dr. Sarah Jenkins</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="ph-fill ph-calendar text-primary text-xl"></i>
+                    <div>
+                        <span class="block font-semibold">Admission Date</span>
+                        <span class="text-muted">Oct 14, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Pending Bills Notice inside Profile -->
+            <div class="mt-6 p-4" style="background: var(--primary-light); border-radius: var(--radius-md); border: 1px solid var(--border);">
+                <h4 class="text-sm font-semibold mb-2" style="color: var(--primary-hover);"><i class="ph ph-receipt"></i> Recent Billing</h4>
+                <p class="text-xs mb-3" style="color: var(--text-main);">Invoice #INV-2041 generating total to ₹1,200.00 is settled.</p>
+                <button class="btn btn-primary btn-block" style="padding: 0.5rem; font-size: 0.8rem;">View Financials</button>
+            </div>
+        </div>
+
+        <!-- Track & Updates Timeline -->
+        <div>
+            <h2 class="mb-2">Daily Progress Track</h2>
+            <p class="mb-8">Follow Martha's daily updates, notes from the care team, and current trajectory.</p>
+
+            <div class="timeline">
+                
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="ph ph-heartbeat"></i></div>
+                    <div class="timeline-content">
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <h4 class="mb-1">Physiotherapy and Routine Vitals</h4>
+                                <span class="text-xs text-muted block"><i class="ph-fill ph-clock"></i> Today, 10:45 AM | by Dr. Jenkins</span>
+                            </div>
+                            <span class="badge badge-primary">Improving</span>
+                        </div>
+                        <p class="text-sm mb-0">Martha has eaten her breakfast well today and successfully completed 30 minutes of gentle leg physiotherapy. Vitals are completely normal (BP 120/80, Spo2 98%). Sleep quality last night was excellent without heavily prescribed sedatives.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon" style="background: var(--secondary-light); color: var(--secondary);"><i class="ph ph-pill"></i></div>
+                    <div class="timeline-content">
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <h4 class="mb-1">Medication Routine Modified</h4>
+                                <span class="text-xs text-muted block"><i class="ph-fill ph-clock"></i> Yesterday, 5:30 PM | by Nurse Davis</span>
+                            </div>
+                            <span class="badge badge-success">Stable</span>
+                        </div>
+                        <p class="text-sm mb-0">Evening medications delivered. Dosage for hypertension dropped slightly per Dr. Jenkins. A light dinner was consumed. Martha requested an extra blanket which has been provided.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-icon" style="background: #fef3c7; color: #d97706;"><i class="ph ph-stethoscope"></i></div>
+                    <div class="timeline-content">
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <h4 class="mb-1">Routine Health Check</h4>
+                                <span class="text-xs text-muted block"><i class="ph-fill ph-clock"></i> Oct 22, 2026, 11:00 AM | by Dr. Jenkins</span>
+                            </div>
+                            <span class="badge badge-warning">Observation</span>
+                        </div>
+                        <p class="text-sm mb-4">Performed morning rounds. Vitals have improved slightly, but remaining under observation for any spikes resulting from medication interactions. Scheduled for secondary lab tests tomorrow.</p>
+                        
+                        <div class="p-3" style="background: var(--surface-hover); border-radius: var(--radius-md); border: 1px solid var(--border); display: flex; align-items: center; gap: 1rem;">
+                            <i class="ph-fill ph-file-pdf text-danger text-2xl"></i>
+                            <div style="flex-grow: 1;">
+                                <span class="text-sm font-semibold block">Blood_Panel_Results.pdf</span>
+                                <span class="text-xs text-muted">1.2 MB</span>
+                            </div>
+                            <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Download</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian Portal | TRANQUIL RETREAT Updates</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body style="background-color: var(--bg-color);">
+
+    <!-- Sidebar / Top Menu -->
+    <aside class="sidebar" style="margin-bottom: 2rem;">
+        <div class="sidebar-header">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="nav-brand" style="margin:0; font-size: 1.25rem;">
+                    <img src="../images/logo.png" alt="Tranquil Retreat Logo" style="height: 32px;"> TRANQUIL RETREAT
+                </a>
+                <span class="badge badge-primary md-hidden">Guardian View</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav flex-col">
+            <a href="dashboard.html" class="sidebar-link"><i class="ph ph-chart-line-up text-lg"></i> Daily Track</a>
+            <a href="medical-records.html" class="sidebar-link active"><i class="ph ph-file-text text-lg"></i> Medical Records</a>
+            <a href="care-team.html" class="sidebar-link"><i class="ph ph-users text-lg"></i> Care Team</a>
+            <a href="billing.html" class="sidebar-link"><i class="ph ph-invoice text-lg"></i> Billing</a>
+        </nav>
+        <div class="p-4" style="border-top: 1px solid var(--border);">
+            <div class="flex items-center gap-4">
+                <span class="font-semibold text-sm md-hidden">Welcome, John S.</span>
+                <a href="../login.html" class="sidebar-link text-danger" style="margin: 0; padding: 0.5rem;"><i class="ph ph-sign-out text-lg"></i> Logout</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="container grid md-grid-cols-1 gap-8" style="grid-template-columns: 350px 1fr; align-items: start; margin-bottom: 4rem;">
+        
+        <!-- Patient Sidebar Info -->
+        <div class="card" style="position: sticky; top: 100px;">
+            <div class="flex flex-col items-center text-center pb-6 mb-6" style="border-bottom: 1px solid var(--border);">
+                <div class="avatar mb-4" style="width: 80px; height: 80px; font-size: 2rem; background: var(--secondary-light); color: var(--secondary);">MS</div>
+                <h2 class="mb-1 text-lg">Martha Stewart</h2>
+                <p class="mb-2 text-sm text-muted">Current Location: Ward A, Bed 102</p>
+                <span class="badge badge-success">Overall Status: Stable</span>
+            </div>
+            
+            <div class="flex flex-col gap-4 text-sm">
+                <div class="flex items-center gap-3">
+                    <i class="ph-fill ph-user-md text-primary text-xl"></i>
+                    <div>
+                        <span class="block font-semibold">Attending Prescriber</span>
+                        <span class="text-muted">Dr. Sarah Jenkins</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="ph-fill ph-calendar text-primary text-xl"></i>
+                    <div>
+                        <span class="block font-semibold">Admission Date</span>
+                        <span class="text-muted">Oct 14, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Medical Records Area -->
+        <div>
+            <div class="flex justify-between items-center mb-6 border-b" style="border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                <h2 class="mb-0 text-xl font-bold text-main">Diagnostic Reports & Prescriptions</h2>
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem; border-color: var(--primary); color: var(--primary);">
+                    <i class="ph ph-download-simple"></i> Download All
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6 mb-8">
+                <!-- Prescription Box -->
+                <div class="card p-0" style="overflow: hidden; border-left: 4px solid var(--secondary);">
+                    <div class="p-4 bg-gray-50 flex justify-between items-center" style="background: var(--surface-hover); border-bottom: 1px solid var(--border);">
+                        <h3 class="mb-0 text-lg"><i class="ph-fill ph-pill"></i> Active Prescriptions</h3>
+                        <span class="text-sm text-muted">Last updated: Today</span>
+                    </div>
+                    <div class="table-container" style="border: none; box-shadow: none;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Medication</th>
+                                    <th>Timings</th>
+                                    <th>Dosage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="font-semibold text-main block">Amlodipine</span><span class="text-xs text-muted">Hypertension</span></td>
+                                    <td><span class="badge badge-warning text-xs">Morning (08:00 AM)</span></td>
+                                    <td>5mg</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-semibold text-main block">Metformin</span><span class="text-xs text-muted">Blood Sugar</span></td>
+                                    <td><span class="badge badge-primary text-xs">With Lunch (01:00 PM)</span><br><span class="badge badge-primary text-xs" style="margin-top:2px;">With Dinner (07:30 PM)</span></td>
+                                    <td>500mg</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="font-semibold text-main block">Vitamin B12 Complex</span><span class="text-xs text-muted">Supplement</span></td>
+                                    <td><span class="badge badge-warning text-xs">Morning (08:00 AM)</span></td>
+                                    <td>1 Capsule</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Lab Reports -->
+                <div class="card p-0" style="overflow: hidden; border-left: 4px solid var(--primary);">
+                    <div class="p-4 bg-gray-50 flex justify-between items-center" style="background: var(--surface-hover); border-bottom: 1px solid var(--border);">
+                        <h3 class="mb-0 text-lg"><i class="ph-fill ph-flask"></i> Certified Lab Reports</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center py-3 border-b" style="border-bottom: 1px dashed var(--border);">
+                            <div class="flex gap-3 items-center">
+                                <i class="ph-fill ph-file-pdf text-danger text-2xl"></i>
+                                <div>
+                                    <span class="font-semibold block text-sm">Comprehensive Metabolic Panel</span>
+                                    <span class="text-xs text-muted">Oct 22, 2026 &bull; Processed firmly</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; border:none;"><i class="ph ph-download-simple text-primary text-lg"></i></button>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b" style="border-bottom: 1px dashed var(--border);">
+                            <div class="flex gap-3 items-center">
+                                <i class="ph-fill ph-file-pdf text-danger text-2xl"></i>
+                                <div>
+                                    <span class="font-semibold block text-sm">Lipid Profile & Glucose Fasting</span>
+                                    <span class="text-xs text-muted">Oct 16, 2026 &bull; Routine check</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; border:none;"><i class="ph ph-download-simple text-primary text-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="../js/app.js"></script>
+</body>
+</html>
