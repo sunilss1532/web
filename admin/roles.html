@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roles Management | TRANQUIL RETREAT</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="nav-brand" style="font-size: 1.25rem;">
+                <img src="../images/logo.png" alt="Tranquil Retreat Logo" style="height: 32px;"> TRANQUIL RETREAT Admin
+            </a>
+        </div>
+        <nav class="sidebar-nav flex-col">
+            <a href="dashboard.html" class="sidebar-link"><i class="ph ph-squares-four text-lg"></i> Dashboard Overview</a>
+            <a href="patients.html" class="sidebar-link"><i class="ph ph-users text-lg"></i> Patient Management</a>
+            <!-- CMS Dropdown -->
+            <div class="dropdown-wrapper">
+                <div class="sidebar-link" style="cursor: pointer;"><i class="ph ph-browser text-lg"></i> Website CMS <i class="ph ph-caret-down" style="margin-left: 4px;"></i></div>
+                <div class="dropdown-menu">
+                    <a href="cms.html">Home Page</a>
+                    <a href="cms.html">About Us</a>
+                    <a href="cms.html">Services</a>
+                    <a href="cms.html">Contact Info</a>
+                </div>
+            </div>
+            <a href="roles.html" class="sidebar-link active"><i class="ph ph-identification-badge text-lg"></i> Hospital Roles</a>
+            <a href="billing.html" class="sidebar-link"><i class="ph ph-invoice text-lg"></i> Billing & Invoices</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div>
+                <h2><i class="ph ph-identification-badge" style="color:var(--primary);"></i> Hospital Roles Management</h2>
+                <p class="mb-0 text-sm">Create specific permission roles for doctors, nurses, and administrative staff.</p>
+            </div>
+            <div>
+                <button class="btn btn-primary" onclick="toggleModal('roleModal')"><i class="ph ph-plus"></i> Create New Role</button>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-3 md-grid-cols-1 gap-8">
+            <!-- Role Cards -->
+            <div class="card p-6" style="border-top: 4px solid var(--primary);">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="mb-1">Medical Consultant</h3>
+                        <p class="text-sm badge badge-primary" style="display:inline-block;">12 Staff Assigned</p>
+                    </div>
+                    <button class="btn btn-outline" style="padding: 0.25rem 0.5rem;"><i class="ph ph-pencil-simple"></i></button>
+                </div>
+                <div class="mt-4 pt-4" style="border-top: 1px solid var(--border);">
+                    <p class="text-sm font-semibold mb-2">Permissions:</p>
+                    <ul class="flex-col gap-2 text-sm text-muted">
+                        <li><i class="ph-fill ph-check-circle text-secondary"></i> View Patient Tracks</li>
+                        <li><i class="ph-fill ph-check-circle text-secondary"></i> Post Daily Updates to Portal</li>
+                        <li><i class="ph-fill ph-check-circle text-secondary"></i> Prescribe Medications</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card p-6" style="border-top: 4px solid var(--secondary);">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="mb-1">On-duty Nurse</h3>
+                        <p class="text-sm badge" style="display:inline-block; background: var(--secondary-light); color: var(--secondary-hover);">36 Staff Assigned</p>
+                    </div>
+                    <button class="btn btn-outline" style="padding: 0.25rem 0.5rem;"><i class="ph ph-pencil-simple"></i></button>
+                </div>
+                <div class="mt-4 pt-4" style="border-top: 1px solid var(--border);">
+                    <p class="text-sm font-semibold mb-2">Permissions:</p>
+                    <ul class="flex-col gap-2 text-sm text-muted">
+                        <li><i class="ph-fill ph-check-circle text-secondary"></i> View Patient Tracks</li>
+                        <li><i class="ph-fill ph-check-circle text-secondary"></i> Add Vitals Notes</li>
+                        <li><i class="ph-fill ph-x-circle text-danger"></i> Post Guardian Updates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card p-6" style="border-top: 4px solid #f59e0b;">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="mb-1">Billing Administrator</h3>
+                        <p class="text-sm badge" style="display:inline-block; background: #fef3c7; color: #d97706;">4 Staff Assigned</p>
+                    </div>
+                    <button class="btn btn-outline" style="padding: 0.25rem 0.5rem;"><i class="ph ph-pencil-simple"></i></button>
+                </div>
+                <div class="mt-4 pt-4" style="border-top: 1px solid var(--border);">
+                    <p class="text-sm font-semibold mb-2">Permissions:</p>
+                    <ul class="flex-col gap-2 text-sm text-muted">
+                        <li><i class="ph-fill ph-check-circle text-secondary"></i> Generate Invoices</li>
+                        <li><i class="ph-fill ph-check-circle text-secondary"></i> Access Financial Reports</li>
+                        <li><i class="ph-fill ph-x-circle text-danger"></i> View Patient Medical Vitals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Creating Role -->
+    <div class="modal-overlay" id="roleModal">
+        <div class="modal card">
+            <div class="modal-header">
+                <h3>Create Custom Staff Role</h3>
+                <button class="modal-close" onclick="toggleModal('roleModal')"><i class="ph ph-x"></i></button>
+            </div>
+            <form onsubmit="event.preventDefault(); toggleModal('roleModal'); alert('Role created successfully.');">
+                <div class="form-group">
+                    <label class="form-label">Role Title</label>
+                    <input type="text" class="form-control" placeholder="E.g., Physiotherapist" required>
+                </div>
+                <div class="form-group mb-6">
+                    <label class="form-label">Key Permissions</label>
+                    <div class="flex-col gap-2" style="background: var(--surface-hover); padding: 1rem; border-radius: var(--radius-md);">
+                        <label class="flex items-center gap-2"><input type="checkbox" checked> View Patient List</label>
+                        <label class="flex items-center gap-2"><input type="checkbox"> Add Medical Vitals</label>
+                        <label class="flex items-center gap-2"><input type="checkbox"> Send Guardian Updates</label>
+                        <label class="flex items-center gap-2"><input type="checkbox"> Access Billing/CMS</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Save New Role</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Management | TRANQUIL RETREAT</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="nav-brand" style="font-size: 1.25rem;">
+                <img src="../images/logo.png" alt="Tranquil Retreat Logo" style="height: 32px;"> TRANQUIL RETREAT Admin
+            </a>
+        </div>
+        <nav class="sidebar-nav flex-col">
+            <a href="dashboard.html" class="sidebar-link"><i class="ph ph-squares-four text-lg"></i> Dashboard Overview</a>
+            <a href="patients.html" class="sidebar-link"><i class="ph ph-users text-lg"></i> Patient Management</a>
+            <!-- CMS Dropdown -->
+            <div class="dropdown-wrapper">
+                <div class="sidebar-link active" style="cursor: pointer;"><i class="ph ph-browser text-lg"></i> Website CMS <i class="ph ph-caret-down" style="margin-left: 4px;"></i></div>
+                <div class="dropdown-menu">
+                    <a href="cms.html">Home Page</a>
+                    <a href="cms.html">About Us</a>
+                    <a href="cms.html">Services</a>
+                    <a href="cms.html">Contact Info</a>
+                </div>
+            </div>
+            <a href="roles.html" class="sidebar-link"><i class="ph ph-identification-badge text-lg"></i> Hospital Roles</a>
+            <a href="billing.html" class="sidebar-link"><i class="ph ph-invoice text-lg"></i> Billing & Invoices</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div>
+                <h2>Content Management System</h2>
+                <p class="mb-0 text-sm">Update public-facing web pages and site announcements.</p>
+            </div>
+            <div>
+                <a href="../index.html" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem;"><i class="ph ph-arrow-square-out"></i> View Live Site</a>
+            </div>
+        </header>
+
+        <div class="grid md-grid-cols-1 gap-8" style="grid-template-columns: 250px 1fr;">
+            <!-- Tabs Sidebar -->
+            <div class="card p-0" style="align-self: flex-start; overflow: hidden;">
+                <div class="sidebar-link active" style="margin:0; border-radius:0; padding:1rem 1.5rem; cursor:pointer;">Home Page</div>
+                <div class="sidebar-link" style="margin:0; border-radius:0; padding:1rem 1.5rem; cursor:pointer;">About Us</div>
+                <div class="sidebar-link" style="margin:0; border-radius:0; padding:1rem 1.5rem; cursor:pointer;">Services</div>
+                <div class="sidebar-link" style="margin:0; border-radius:0; padding:1rem 1.5rem; cursor:pointer;">Contact Details</div>
+            </div>
+
+            <!-- Editor Area -->
+            <div class="card">
+                <div class="flex justify-between items-center mb-6 pb-4" style="border-bottom: 1px solid var(--border);">
+                    <h3>Edit Home Page</h3>
+                    <span class="badge badge-success">Live</span>
+                </div>
+
+                <form id="cmsForm" onsubmit="saveCMS(event)">
+                    <div class="form-group">
+                        <label class="form-label">Hero Banner Headline</label>
+                        <input type="text" class="form-control" id="cms_hero_title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Hero Banner Subtext</label>
+                        <textarea class="form-control" rows="4" id="cms_hero_subtitle" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Contact Phone Number</label>
+                        <input type="text" class="form-control" id="cms_contact_phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Contact Email</label>
+                        <input type="email" class="form-control" id="cms_contact_email" required>
+                    </div>
+
+                    <div class="flex justify-end mt-8 gap-4">
+                        <button type="button" class="btn btn-outline" onclick="loadCMS()">Reset</button>
+                        <button type="submit" class="btn btn-primary"><i class="ph ph-check"></i> Publish Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

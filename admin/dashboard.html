@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | TRANQUIL RETREAT</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="nav-brand" style="font-size: 1.25rem;">
+                <img src="../images/logo.png" alt="Tranquil Retreat Logo" style="height: 32px;"> TRANQUIL RETREAT Admin
+            </a>
+        </div>
+        <nav class="sidebar-nav flex-col">
+            <a href="dashboard.html" class="sidebar-link active"><i class="ph ph-squares-four text-lg"></i> Dashboard Overview</a>
+            <a href="patients.html" class="sidebar-link"><i class="ph ph-users text-lg"></i> Patient Management</a>
+            <!-- CMS Dropdown -->
+            <div class="dropdown-wrapper">
+                <div class="sidebar-link" style="cursor: pointer;"><i class="ph ph-browser text-lg"></i> Website CMS <i class="ph ph-caret-down" style="margin-left: 4px;"></i></div>
+                <div class="dropdown-menu">
+                    <a href="cms.html">Home Page</a>
+                    <a href="cms.html">About Us</a>
+                    <a href="cms.html">Services</a>
+                    <a href="cms.html">Contact Info</a>
+                </div>
+            </div>
+            <a href="roles.html" class="sidebar-link"><i class="ph ph-identification-badge text-lg"></i> Hospital Roles</a>
+            <a href="billing.html" class="sidebar-link"><i class="ph ph-invoice text-lg"></i> Billing & Invoices</a>
+        </nav>
+        <div class="p-4" style="border-top: 1px solid var(--border);">
+            <a href="../login.html" class="sidebar-link text-danger" style="margin: 0; padding: 0.5rem;"><i class="ph ph-sign-out text-lg"></i> Secure Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="top-header">
+            <div>
+                <h2>Welcome, Dr. Sarah</h2>
+                <p class="mb-0 text-sm">Here's what's happening at the hospital today.</p>
+            </div>
+            <div class="user-profile">
+                <div class="flex items-center gap-2">
+                    <div style="text-align: right;">
+                        <span class="font-bold text-sm block" style="line-height:1;">Dr. Sarah Jenkins</span>
+                        <span class="text-xs text-muted block">Chief Administrator</span>
+                    </div>
+                    <div class="avatar">SJ</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="ph ph-users"></i></div>
+                <div class="stat-details">
+                    <h4>Admitted Patients</h4>
+                    <div class="value">142</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background-color: var(--secondary-light); color: var(--secondary);"><i class="ph ph-user-nurse"></i></div>
+                <div class="stat-details">
+                    <h4>Staff on Duty</h4>
+                    <div class="value">48</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background-color: #fef3c7; color: #d97706;"><i class="ph ph-clock-counter-clockwise"></i></div>
+                <div class="stat-details">
+                    <h4>Pending Updates</h4>
+                    <div class="value">12</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background-color: #f1f5f9; color: var(--text-main);"><i class="ph ph-coins"></i></div>
+                <div class="stat-details">
+                    <h4>Monthly Revenue</h4>
+                    <div class="value" style="font-size: 1.25rem;">₹124,500</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 md-grid-cols-1 gap-8">
+            <!-- Recent Daily Updates -->
+            <div class="card p-0">
+                <div class="p-6 border-b" style="border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+                    <h3 class="mb-0">Recent Health Updates Sent</h3>
+                    <a href="patients.html" class="text-primary text-sm font-semibold">View All &rarr;</a>
+                </div>
+                <div class="table-container" style="border: none; box-shadow: none;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Status</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="font-semibold">Martha Stewart</div><span class="text-xs text-muted">Ward A, Room 102</span></td>
+                                <td><span class="badge badge-success">Vitals Stable</span></td>
+                                <td><span class="text-sm text-muted">10 mins ago</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="font-semibold">Robert Chen</div><span class="text-xs text-muted">ICU, Bed 4</span></td>
+                                <td><span class="badge badge-warning">Observation</span></td>
+                                <td><span class="text-sm text-muted">45 mins ago</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="font-semibold">Evelyn Harper</div><span class="text-xs text-muted">Physiotherapy</span></td>
+                                <td><span class="badge badge-primary">Improving</span></td>
+                                <td><span class="text-sm text-muted">2 hours ago</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card p-0" style="display: flex; flex-direction: column;">
+                <div class="p-6 border-b" style="border-bottom: 1px solid var(--border);">
+                    <h3 class="mb-0">System Alerts</h3>
+                </div>
+                <div class="p-6 flex-col gap-4">
+                    <div class="flex gap-4 p-4" style="background: var(--surface-hover); border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
+                        <i class="ph-fill ph-info text-primary text-xl mt-1"></i>
+                        <div>
+                            <h4 class="text-sm mb-1">New CMS Feature available</h4>
+                            <p class="text-xs text-muted mb-0">You can now update the public site Hero Image directly from the CMS page.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4" style="background: #fff1f2; border-radius: var(--radius-md); border-left: 4px solid var(--danger);">
+                        <i class="ph-fill ph-warning-circle text-danger text-xl mt-1"></i>
+                        <div>
+                            <h4 class="text-sm mb-1">Billing Overdue</h4>
+                            <p class="text-xs text-muted mb-0">Invoice #INV-2041 requires immediate guardian notification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

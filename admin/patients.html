@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients & Tracking | TRANQUIL RETREAT</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="nav-brand" style="font-size: 1.25rem;">
+                <img src="../images/logo.png" alt="Tranquil Retreat Logo" style="height: 32px;"> TRANQUIL RETREAT Admin
+            </a>
+        </div>
+        <nav class="sidebar-nav flex-col">
+            <a href="dashboard.html" class="sidebar-link"><i class="ph ph-squares-four text-lg"></i> Dashboard Overview</a>
+            <a href="patients.html" class="sidebar-link active"><i class="ph ph-users text-lg"></i> Patient Management</a>
+            <!-- CMS Dropdown -->
+            <div class="dropdown-wrapper">
+                <div class="sidebar-link" style="cursor: pointer;"><i class="ph ph-browser text-lg"></i> Website CMS <i class="ph ph-caret-down" style="margin-left: 4px;"></i></div>
+                <div class="dropdown-menu">
+                    <a href="cms.html">Home Page</a>
+                    <a href="cms.html">About Us</a>
+                    <a href="cms.html">Services</a>
+                    <a href="cms.html">Contact Info</a>
+                </div>
+            </div>
+            <a href="roles.html" class="sidebar-link"><i class="ph ph-identification-badge text-lg"></i> Hospital Roles</a>
+            <a href="billing.html" class="sidebar-link"><i class="ph ph-invoice text-lg"></i> Billing & Invoices</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div>
+                <h2><i class="ph ph-users" style="color:var(--primary);"></i> Patient Directory & Updates</h2>
+                <p class="mb-0 text-sm">Manage admitted patients and broadcast daily health tracks to their guardians.</p>
+            </div>
+            <div>
+                <button class="btn btn-primary" onclick="toggleModal('addPatientModal')"><i class="ph ph-plus"></i> Admit New Patient</button>
+            </div>
+        </header>
+
+        <div class="card p-0">
+            <div class="p-6 flex justify-between items-center" style="border-bottom: 1px solid var(--border);">
+                <div style="position: relative; width: 300px;">
+                    <i class="ph ph-magnifying-glass" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                    <input type="text" class="form-control" placeholder="Search by name, ID, or ward..." style="padding-left: 2.5rem; padding-top: 0.5rem; padding-bottom: 0.5rem;">
+                </div>
+                <div class="flex gap-2">
+                    <button class="btn btn-outline" style="padding: 0.5rem 1rem;"><i class="ph ph-funnel"></i></button>
+                </div>
+            </div>
+            
+            <div class="table-container" style="border: none; box-shadow: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Patient Name</th>
+                            <th>Ward/Room</th>
+                            <th>Primary Guardian</th>
+                            <th>Status Condition</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold text-sm text-primary">#PT-2091</td>
+                            <td><div class="font-semibold text-main">Martha Stewart</div><div class="text-xs text-muted">Age: 78 | Dr. Smith</div></td>
+                            <td>Ward A, Bed 102</td>
+                            <td><div class="text-sm">John Stewart</div><div class="text-xs text-muted">+1 555-0192</div></td>
+                            <td><span class="badge badge-success">Stable</span></td>
+                            <td>
+                                <div class="flex gap-2">
+                                    <button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;" onclick="toggleModal('updateModal')">Post Daily Update</button>
+                                    <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="ph ph-pencil-simple"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-sm text-primary">#PT-2092</td>
+                            <td><div class="font-semibold text-main">Robert Chen</div><div class="text-xs text-muted">Age: 82 | Dr. Jenkins</div></td>
+                            <td>ICU, Bed 4</td>
+                            <td><div class="text-sm">Alice Chen</div><div class="text-xs text-muted">+1 555-5211</div></td>
+                            <td><span class="badge badge-warning">Critical Observation</span></td>
+                            <td>
+                                <div class="flex gap-2">
+                                    <button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;" onclick="toggleModal('updateModal')">Post Daily Update</button>
+                                    <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;"><i class="ph ph-pencil-simple"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Adding Patient -->
+    <div class="modal-overlay" id="addPatientModal">
+        <div class="modal card">
+            <div class="modal-header">
+                <h3>Admit New Patient</h3>
+                <button class="modal-close" onclick="toggleModal('addPatientModal')"><i class="ph ph-x"></i></button>
+            </div>
+            <form onsubmit="event.preventDefault(); toggleModal('addPatientModal');">
+                <div class="grid grid-cols-2 md-grid-cols-1 gap-4">
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Medical History / Notes</label>
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+
+                <h4 class="mb-4 mt-6 pb-2" style="border-bottom: 1px solid var(--border);">Guardian Linkage</h4>
+                <div class="form-group">
+                    <label class="form-label">Guardian Named</label>
+                    <input type="text" class="form-control" placeholder="E.g., Son, Daughter, Spouse" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Guardian Email (For Portal Login)</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                
+                <div class="flex justify-end mt-8 gap-4">
+                    <button type="button" class="btn btn-outline" onclick="toggleModal('addPatientModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Admit & Send Invite</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Posting Update -->
+    <div class="modal-overlay" id="updateModal">
+        <div class="modal card">
+            <div class="modal-header">
+                <h3>Post Daily Track Update</h3>
+                <button class="modal-close" onclick="toggleModal('updateModal')"><i class="ph ph-x"></i></button>
+            </div>
+            <form onsubmit="event.preventDefault(); toggleModal('updateModal'); alert('Update successfully dispatched to Guardian Portal.');">
+                <div class="p-4 mb-4" style="background: var(--surface-hover); border-radius: var(--radius-md);">
+                    <p class="text-sm font-semibold mb-0">Patient: Martha Stewart (#PT-2091)</p>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Vitals & Condition</label>
+                    <select class="form-control" required>
+                        <option value="stable">Stable / Normal</option>
+                        <option value="improving">Improving</option>
+                        <option value="observation">Under Observation</option>
+                        <option value="critical">Critical</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Update Message for Family</label>
+                    <textarea class="form-control" rows="4" placeholder="E.g., Martha has eaten well today and completed 30 minutes of gentle physiotherapy. Vitals are completely normal." required></textarea>
+                </div>
+                <div class="form-group mb-6">
+                    <label class="form-label">Attach File (Lab results, Chart)</label>
+                    <input type="file" class="form-control" style="padding: 0.5rem;">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"><i class="ph ph-paper-plane-right"></i> Publish to Guardian Portal</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
