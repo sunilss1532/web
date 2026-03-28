@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tranquil Retreat Elder Care Centre</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --gold: #C9A227;
+    --gold-light: #E8C85A;
+    --gold-pale: #F5EAC8;
+    --green: #7B9E3E;
+    --green-dark: #5A7A2A;
+    --green-light: #A8C86A;
+    --navy: #1A3A5C;
+    --navy-light: #2E5478;
+    --teal: #2E6E8E;
+    --brown: #3B2A1A;
+    --cream: #F9F6F0;
+    --white: #FFFFFF;
+    --text-dark: #2C2C2C;
+    --text-mid: #555;
+    --text-light: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--navy);
+    color: #fff;
+    padding: 8px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+  .topbar a { color: var(--gold-light); text-decoration: none; margin-left: 20px; }
+  .topbar-left span { margin-right: 24px; opacity: 0.85; }
+  .topbar-left span::before { margin-right: 6px; }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 20px rgba(26,58,92,0.10);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .nav-logo-icon {
+    width: 54px; height: 54px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--green) 100%);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 4px 15px rgba(201,162,39,0.35);
+    flex-shrink: 0;
+  }
+  .nav-logo-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+  }
+  .nav-logo-text span {
+    font-size: 10px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--brown) !important;
+    padding: 10px 22px !important;
+    border-radius: 30px;
+    font-weight: 700 !important;
+    transition: all 0.3s !important;
+    box-shadow: 0 4px 15px rgba(201,162,39,0.35);
+  }
+  .nav-cta:hover {
+    background: var(--gold-light) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(201,162,39,0.45) !important;
+  }
+  .nav-cta::after { display: none !important; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 40%, var(--teal) 100%);
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(201,162,39,0.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(123,158,62,0.10) 0%, transparent 40%),
+      radial-gradient(circle at 60% 80%, rgba(46,110,142,0.15) 0%, transparent 40%);
+  }
+  .hero-waves {
+    position: absolute; bottom: 0; left: 0; right: 0;
+  }
+  .hero-waves svg { display: block; }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto;
+    padding: 80px 40px 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-text { animation: fadeInLeft 0.9s ease; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,162,39,0.18);
+    border: 1px solid rgba(201,162,39,0.4);
+    color: var(--gold-light);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero-subtitle {
+    font-size: 17px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--brown);
+    padding: 14px 32px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 6px 25px rgba(201,162,39,0.4);
+    letter-spacing: 0.5px;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(201,162,39,0.5);
+    background: var(--gold-light);
+  }
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.5);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.8);
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 24px;
+    padding: 40px;
+    animation: fadeInRight 0.9s ease;
+  }
+  .hero-card-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light);
+    font-size: 20px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(201,162,39,0.3);
+  }
+  .hero-services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .hero-service-item {
+    background: rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .hero-service-item:hover {
+    background: rgba(201,162,39,0.15);
+    border-color: rgba(201,162,39,0.4);
+    transform: translateY(-3px);
+  }
+  .hero-service-item .icon { font-size: 30px; margin-bottom: 8px; }
+  .hero-service-item p { color: #fff; font-size: 13px; font-weight: 600; }
+
+  /* ── STATS ── */
+  .stats {
+    background: var(--navy);
+    padding: 50px 40px;
+  }
+  .stats-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+  }
+  .stat-item { padding: 10px; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+  }
+  .stat-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.15);
+    align-self: center;
+    height: 60px;
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 90px 40px; }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-tag {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .section-sub {
+    color: var(--text-mid);
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 580px; margin: 0 auto;
+  }
+  .section-divider {
+    width: 60px; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--green));
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--cream); }
+  .services-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 36px 30px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--green));
+    transform: scaleX(0);
+    transition: transform 0.4s;
+    transform-origin: left;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(26,58,92,0.12);
+    border-color: transparent;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 64px; height: 64px;
+    background: linear-gradient(135deg, var(--gold-pale), #fff);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(201,162,39,0.2);
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .service-card p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .service-link {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: gap 0.3s;
+  }
+  .service-link:hover { gap: 10px; }
+  .service-features { list-style: none; margin-bottom: 20px; }
+  .service-features li {
+    font-size: 13px;
+    color: var(--text-mid);
+    padding: 5px 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .service-features li::before {
+    content: '✓';
+    color: var(--green);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ── WHY CHOOSE US ── */
+  .why { background: var(--white); }
+  .why-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .why-visual {
+    position: relative;
+  }
+  .why-visual-main {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+    border-radius: 24px;
+    padding: 50px 40px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-visual-main::before {
+    content: '🌳';
+    position: absolute;
+    right: -10px; bottom: -20px;
+    font-size: 120px;
+    opacity: 0.12;
+  }
+  .why-visual-main h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    margin-bottom: 16px;
+    color: var(--gold-light);
+  }
+  .why-visual-main p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.88;
+    margin-bottom: 24px;
+  }
+  .why-quote {
+    background: rgba(255,255,255,0.1);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+  .why-badge {
+    position: absolute;
+    top: -18px; right: 30px;
+    background: var(--gold);
+    color: var(--brown);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(201,162,39,0.4);
+  }
+  .why-points { display: flex; flex-direction: column; gap: 22px; }
+  .why-point {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 20px 24px;
+    border-radius: 14px;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+  }
+  .why-point:hover {
+    background: var(--cream);
+    border-color: rgba(201,162,39,0.2);
+  }
+  .why-point-icon {
+    width: 50px; height: 50px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--gold-pale), #fff);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    border: 1px solid rgba(201,162,39,0.2);
+  }
+  .why-point h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .why-point p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ── TEAM ── */
+  .team { background: var(--cream); }
+  .team-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .team-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.4s;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(26,58,92,0.12);
+  }
+  .team-avatar {
+    height: 220px;
+    background-color: #e2e8f0;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+  }
+  .team-avatar::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 20px;
+    background: var(--white);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .team-info { padding: 16px 20px 24px; }
+  .team-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .team-info .role {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .team-info p { font-size: 13px; color: var(--text-mid); line-height: 1.5; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--navy); }
+  .testimonials .section-title { color: var(--white); }
+  .testimonials .section-sub { color: rgba(255,255,255,0.65); }
+  .testimonials .section-tag { color: var(--gold-light); }
+  .testimonials-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s;
+  }
+  .testimonial-card:hover {
+    background: rgba(201,162,39,0.1);
+    border-color: rgba(201,162,39,0.3);
+    transform: translateY(-4px);
+  }
+  .stars { color: var(--gold); font-size: 18px; margin-bottom: 14px; letter-spacing: 2px; }
+  .testimonial-text {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.75;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .author-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--green));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .author-info h5 { color: #fff; font-size: 14px; font-weight: 600; }
+  .author-info span { color: rgba(255,255,255,0.5); font-size: 12px; }
+
+  /* ── PROCESS ── */
+  .process { background: var(--white); }
+  .process-steps {
+    max-width: 900px; margin: 0 auto;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    left: 35px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--green), var(--navy));
+  }
+  .process-step {
+    display: flex; gap: 30px;
+    padding: 0 0 40px 0;
+    position: relative;
+  }
+  .step-number {
+    width: 72px; height: 72px; flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+    position: relative; z-index: 1;
+    box-shadow: 0 0 0 6px var(--white);
+  }
+  .step-content {
+    padding-top: 16px;
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 22px 28px;
+    flex: 1;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .step-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .step-content p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: linear-gradient(135deg, var(--gold) 0%, #A87C1A 100%);
+    padding: 70px 40px;
+    text-align: center;
+  }
+  .cta-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3vw, 38px);
+    color: var(--brown);
+    margin-bottom: 14px;
+  }
+  .cta-band p { color: rgba(59,42,26,0.8); font-size: 17px; margin-bottom: 32px; font-weight: 300; }
+  .cta-band-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-dark {
+    background: var(--navy);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 6px 20px rgba(26,58,92,0.3);
+  }
+  .btn-dark:hover { background: var(--navy-light); transform: translateY(-2px); }
+  .btn-white-outline {
+    border: 2px solid var(--brown);
+    color: var(--brown);
+    padding: 12px 30px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-white-outline:hover { background: rgba(0,0,0,0.08); }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--cream); }
+  .contact-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+  .contact-info p { font-size: 15px; color: var(--text-mid); line-height: 1.7; margin-bottom: 32px; }
+  .contact-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    margin-bottom: 22px;
+  }
+  .contact-item-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--gold-pale), #fff);
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .contact-item h5 { font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .contact-item p { font-size: 15px; color: var(--navy); font-weight: 600; margin: 0; }
+  .contact-form {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
+    border: 1px solid rgba(0,0,0,0.07);
+    box-shadow: 0 10px 40px rgba(26,58,92,0.07);
+  }
+  .contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
+    background: var(--cream);
+    transition: all 0.3s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(201,162,39,0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+  }
+  .form-submit:hover {
+    background: linear-gradient(135deg, var(--navy-light), var(--teal));
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(26,58,92,0.25);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--brown);
+    padding: 60px 40px 30px;
+    color: rgba(255,255,255,0.75);
+  }
+  .footer-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: 50px;
+    margin-bottom: 50px;
+  }
+  .footer-brand h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+  }
+  .footer-brand span {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 18px;
+  }
+  .footer-brand p { font-size: 14px; line-height: 1.7; margin-bottom: 22px; }
+  .social-links { display: flex; gap: 12px; }
+  .social-link {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .social-link:hover { background: var(--gold); transform: translateY(-2px); }
+  .footer-col h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+  }
+  .footer-bottom a { color: var(--gold-light); text-decoration: none; }
+
+  /* ── COLORS INFO BOX ── */
+  .colors-section {
+    background: var(--white);
+    padding: 50px 40px;
+  }
+  .colors-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+  .colors-inner h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 28px;
+  }
+  .color-swatches {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .swatch {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+  }
+  .swatch-box {
+    width: 80px; height: 80px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  }
+  .swatch-label { font-size: 12px; font-weight: 700; color: var(--text-dark); }
+  .swatch-hex { font-size: 11px; color: var(--text-light); font-family: monospace; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; padding: 40px 20px 80px; }
+    .hero-card { display: grid; gap: 15px; margin-top: 40px; padding: 25px; }
+    .hero-services { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .why-inner { grid-template-columns: 1fr; gap: 40px; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; right: 0; background: var(--white); padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .nav-links.active { display: flex; }
+    .mobile-menu-btn { display: block !important; }
+    .topbar { flex-direction: column; gap: 6px; text-align: center; padding: 12px 20px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    section, nav { padding-left: 20px; padding-right: 20px; }
+    .hero-services { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 38px; }
+    nav { height: 70px; }
+    .nav-links { top: 70px; }
+  }
+</style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="global-preloader" style="position: fixed; inset: 0; background: #F9F6F0; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: opacity 0.6s ease, visibility 0.6s ease;">
+        <img src="images/logo.png" alt="Loading Tranquil Retreat..." style="height: 100px; animation: pulseLogo 1.5s infinite ease-in-out;">
+        <style>
+            @keyframes pulseLogo {
+                0% { transform: scale(0.95); opacity: 0.7; filter: drop-shadow(0 0 10px rgba(201,162,39,0.3)); }
+                50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 25px rgba(201,162,39,0.9)); }
+                100% { transform: scale(0.95); opacity: 0.7; filter: drop-shadow(0 0 10px rgba(201,162,39,0.3)); }
+            }
+        </style>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('global-preloader');
+            if(preloader) {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+                setTimeout(() => preloader.remove(), 600);
+            }
+        });
+    </script>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📞 +91 98765 43210</span>
+    <span>✉ care@tranquilretreat.in</span>
+    <span>📍 Available Across India</span>
+  </div>
+  <div>
+    <a href="#">Book a Free Assessment</a>
+    <a href="#">24/7 Helpline</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" style="text-decoration: none;">
+    <img src="images/logo.png" alt="Tranquil Retreat Logo" style="height: 54px;">
+    <div class="nav-logo-text">
+      <h1>Tranquil Retreat</h1>
+      <span>Elder Care Centre</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#team">Our Team</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#testimonials">Stories</a></li>
+    <li><a href="login.html" class="nav-cta" style="background:var(--navy); color:var(--white) !important; margin-left: 10px;">Portal Login</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">🏡 Trusted Elder Care Specialists</div>
+      <h2 class="hero-title">
+        Where Every Senior<br>Finds <em>Peace, Dignity</em><br>& Belonging
+      </h2>
+      <p class="hero-subtitle">
+        Tranquil Retreat Elder Care Centre offers compassionate, professional, and personalised elder care — from assisted living and memory care to home nursing and day programs — tailored for every stage of life.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">📅 Book Free Assessment</a>
+        <a href="#services" class="btn-outline">Explore Services →</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">Our Care Services</div>
+      <div class="hero-services">
+        <div class="hero-service-item">
+          <div class="icon">🏠</div>
+          <p>Assisted Living</p>
+        </div>
+        <div class="hero-service-item">
+          <div class="icon">💊</div>
+          <p>Medical Care</p>
+        </div>
+        <div class="hero-service-item">
+          <div class="icon">🧠</div>
+          <p>Memory Care</p>
+        </div>
+        <div class="hero-service-item">
+          <div class="icon">🏡</div>
+          <p>Home Nursing</p>
+        </div>
+        <div class="hero-service-item">
+          <div class="icon">🤝</div>
+          <p>Companionship</p>
+        </div>
+        <div class="hero-service-item">
+          <div class="icon">🌿</div>
+          <p>Wellness Programs</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-waves">
+    <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="100">
+      <path d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,50 1440,60 L1440,100 L0,100 Z" fill="#F9F6F0"/>
+    </svg>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Seniors Cared For</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Expert Caregivers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Care Programs</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Family Satisfaction</div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-tag">What We Offer</div>
+    <h2 class="section-title">Comprehensive Care for Every Need</h2>
+    <p class="section-sub">From round-the-clock assisted living to specialised memory care — our services are designed around dignity, comfort, and joy.</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Assisted Living</h3>
+      <p>A warm, home-like environment with professional 24/7 support, nutrition, and recreational activities for independent seniors who need a little help.</p>
+      <ul class="service-features">
+        <li>Spacious private & shared rooms</li>
+        <li>Chef-prepared nutritious meals</li>
+        <li>Daily social & activity programs</li>
+        <li>24/7 trained caregiver presence</li>
+      </ul>
+      <a href="#contact" class="service-link">Enquire Now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🧠</div>
+      <h3>Memory Care</h3>
+      <p>Specialised care for seniors with Alzheimer's, dementia, and cognitive conditions — safe environments with structured therapeutic routines.</p>
+      <ul class="service-features">
+        <li>Secure, calming facility design</li>
+        <li>Cognitive therapy programs</li>
+        <li>Family counselling & updates</li>
+        <li>Trained memory care staff</li>
+      </ul>
+      <a href="#contact" class="service-link">Enquire Now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏡</div>
+      <h3>Home Care & Nursing</h3>
+      <p>Professional caregivers and nurses visit your loved one at home — from medication management to physiotherapy and companion care.</p>
+      <ul class="service-features">
+        <li>Skilled nursing visits</li>
+        <li>Medication administration</li>
+        <li>Post-surgical recovery support</li>
+        <li>Personal hygiene assistance</li>
+      </ul>
+      <a href="#contact" class="service-link">Enquire Now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💊</div>
+      <h3>Medical & Geriatric Care</h3>
+      <p>On-call physicians and geriatric specialists ensure comprehensive health management including chronic disease care, lab work, and consultations.</p>
+      <ul class="service-features">
+        <li>On-site doctor consultations</li>
+        <li>Chronic disease management</li>
+        <li>Lab & diagnostic services</li>
+        <li>Specialist tie-ups & referrals</li>
+      </ul>
+      <a href="#contact" class="service-link">Enquire Now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌿</div>
+      <h3>Wellness & Rehabilitation</h3>
+      <p>Holistic wellness programs including physiotherapy, yoga, occupational therapy and mental health sessions to keep seniors vibrant and active.</p>
+      <ul class="service-features">
+        <li>Daily physiotherapy sessions</li>
+        <li>Yoga & gentle exercise</li>
+        <li>Counselling & mental wellness</li>
+        <li>Speech & occupational therapy</li>
+      </ul>
+      <a href="#contact" class="service-link">Enquire Now →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">☀️</div>
+      <h3>Day Care Program</h3>
+      <p>A structured daytime program for seniors who live at home but benefit from supervised activities, meals, and social engagement during the day.</p>
+      <ul class="service-features">
+        <li>Morning to evening care</li>
+        <li>Pick-up & drop-off service</li>
+        <li>Arts, music & social activities</li>
+        <li>Supervised meals & medication</li>
+      </ul>
+      <a href="#contact" class="service-link">Enquire Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="why-inner" style="max-width:1100px;margin:0 auto;">
+    <div class="why-visual">
+      <div class="why-badge">🏆 Trusted by Families</div>
+      <div class="why-visual-main">
+        <h3>Our Philosophy of Care</h3>
+        <p>At Tranquil Retreat, we believe that ageing is a journey that deserves to be embraced with grace, warmth, and expert support. We don't just provide services — we become family.</p>
+        <div class="why-quote">
+          "Every elder in our care is treated with the same love, patience, and dignity we would want for our own parents."
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title" style="text-align:left;">The Tranquil Retreat Difference</h2>
+      <div class="section-divider" style="margin:16px 0 32px 0;"></div>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-point-icon">👩‍⚕️</div>
+          <div>
+            <h4>Expert Geriatric Professionals</h4>
+            <p>Our team includes trained geriatricians, nurses, therapists, and caregivers with deep expertise in elder-specific health and emotional needs.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-icon">💛</div>
+          <div>
+            <h4>Personalised, Dignified Care Plans</h4>
+            <p>Every resident receives a custom care plan built around their health history, preferences, cultural values, and family input — not a one-size-fits-all approach.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-icon">📱</div>
+          <div>
+            <h4>Family Transparency & Updates</h4>
+            <p>Regular health reports, video call sessions, and a dedicated family coordinator keep your family in the loop at all times, from anywhere.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-icon">🌱</div>
+          <div>
+            <h4>Holistic Wellbeing Approach</h4>
+            <p>Physical, emotional, spiritual, and social wellbeing are all woven into our daily routines — from morning yoga to evening cultural programs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-header">
+    <div class="section-tag">Getting Started</div>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">We make transitioning into our care simple, compassionate, and stress-free for the whole family.</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-number">01</div>
+      <div class="step-content">
+        <h3>Free Consultation & Assessment</h3>
+        <p>Call us or fill in our form. A senior care advisor will contact you within 24 hours to understand your loved one's needs, preferences, and health background.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">02</div>
+      <div class="step-content">
+        <h3>Personalised Care Plan</h3>
+        <p>Our medical and care team designs a tailored plan covering medical needs, dietary requirements, daily activities, and emotional support preferences.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">03</div>
+      <div class="step-content">
+        <h3>Facility Tour & Trial Stay</h3>
+        <p>Visit our facility, meet the caregivers, and arrange a short trial stay so your loved one can settle in comfortably at their own pace.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">04</div>
+      <div class="step-content">
+        <h3>Seamless Move-In & Ongoing Support</h3>
+        <p>Our team manages the entire transition. Once settled, regular family updates and care reviews ensure the plan always evolves with your loved one's needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITY SLIDER -->
+<section style="background: var(--navy); padding: 70px 0; overflow: hidden; white-space: nowrap; outline: none;">
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-family: 'Playfair Display', serif; color: #fff; font-size: 32px; letter-spacing: 0.5px;">Life at Tranquil Retreat</h2>
+        <div class="section-divider" style="margin: 16px auto 0;"></div>
+    </div>
+    <div style="display: flex; width: max-content; animation: scrollSlide 30s linear infinite;">
+        <!-- Group 1 -->
+        <div style="display: flex; gap: 24px; padding: 0 12px;">
+            <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=600&q=80" style="height: 320px; width: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953eb1b5ce?auto=format&fit=crop&w=600&q=80" style="height: 320px; width: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <img src="https://images.unsplash.com/photo-1581579186913-46eaec0232b3?auto=format&fit=crop&w=600&q=80" style="height: 320px; width: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <img src="https://images.unsplash.com/photo-1538688423619-a81d3f23454b?auto=format&fit=crop&w=600&q=80" style="height: 320px; width: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+        </div>
+        <!-- Group 2 (Duplicate) -->
+        <div style="display: flex; gap: 24px; padding: 0 12px;">
+            <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=600&q=80" style="height: 320px; width: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953eb1b5ce?auto=format&fit=crop&w=600&q=80" style="height: 320px; width: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <img src="https://images.unsplash.com/photo-1581579186913-46eaec0232b3?auto=format&fit=crop&w=600&q=80" style="height: 320px; width: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <img src="https://images.unsplash.com/photo-1538688423619-a81d3f23454b?auto=format&fit=crop&w=600&q=80" style="height: 320px; width: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+        </div>
+    </div>
+    <style>
+        @keyframes scrollSlide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="section-header">
+    <div class="section-tag">The People Behind The Care</div>
+    <h2 class="section-title">Our Care Team</h2>
+    <p class="section-sub">Qualified, compassionate, and deeply committed — our professionals are the heart of Tranquil Retreat.</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar" style="background-image: url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="team-info">
+        <h4>Dr. Raghunath Sharma</h4>
+        <div class="role">Chief Geriatrician</div>
+        <p>20+ years in geriatric medicine. Specialist in dementia and age-related conditions.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background-image: url('https://images.unsplash.com/photo-1594824432258-f9b6c07521ab?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="team-info">
+        <h4>Ms. Priya Venkatesh</h4>
+        <div class="role">Head of Nursing</div>
+        <p>RN with a specialisation in elder palliative and post-surgical care.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background-image: url('https://images.unsplash.com/photo-1612349317150-e410f6151121?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="team-info">
+        <h4>Mr. Anil Krishnamurthy</h4>
+        <div class="role">Physiotherapist</div>
+        <p>Expert in geriatric mobility, fall prevention, and rehabilitation programs.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="team-info">
+        <h4>Ms. Sunitha Reddy</h4>
+        <div class="role">Wellness Coordinator</div>
+        <p>Leads daily activity, yoga, and mental wellness programs for all residents.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-header">
+    <div class="section-tag">Family Stories</div>
+    <h2 class="section-title">Words From Those We Serve</h2>
+    <p class="section-sub">The trust families place in us is our greatest honour. Here's what they have to say.</p>
+    <div class="section-divider"></div>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Shifting my mother to Tranquil Retreat was the best decision we made. The warmth of the staff, the cleanliness, and the daily updates put our entire family at ease. She's happier here than she's been in years."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">R</div>
+        <div class="author-info">
+          <h5>Ramesh Iyer</h5>
+          <span>Son of Resident, Chennai</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"The memory care program for my father has been exceptional. The staff understands dementia deeply and handles even the difficult moments with so much patience and love. I sleep peacefully at night now."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">A</div>
+        <div class="author-info">
+          <h5>Ananya Pillai</h5>
+          <span>Daughter of Resident, Bengaluru</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"The home nursing service they arranged after my mother's surgery was outstanding. The nurse was punctual, professional, and genuinely caring. The recovery was smooth and we felt supported every step of the way."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">V</div>
+        <div class="author-info">
+          <h5>Vikram Nair</h5>
+          <span>Son of Resident, Hyderabad</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Give Your Loved One the Care They Deserve</h2>
+  <p>Schedule a free consultation with our senior care experts today — no commitment required.</p>
+  <div class="cta-band-btns">
+    <a href="#contact" class="btn-dark">📅 Book Free Assessment</a>
+    <a href="tel:+919876543210" class="btn-white-outline">📞 Call Us Now</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-header">
+    <div class="section-tag">Get In Touch</div>
+    <h2 class="section-title">We're Here to Help</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-info">
+      <h3>Speak With Our Care Advisors</h3>
+      <p>Have questions about our services, pricing, or availability? Our team is available 7 days a week to guide you with empathy and expertise.</p>
+      <div class="contact-item">
+        <div class="contact-item-icon">📞</div>
+        <div>
+          <h5>Phone</h5>
+          <p>+91 98765 43210</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">✉️</div>
+        <div>
+          <h5>Email</h5>
+          <p>care@tranquilretreat.in</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">⏰</div>
+        <div>
+          <h5>Availability</h5>
+          <p>7 Days a Week, 8 AM – 8 PM</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">🚨</div>
+        <div>
+          <h5>Emergency Helpline</h5>
+          <p>24/7 Available for Residents</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Book a Free Assessment</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Your full name"/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@email.com"/>
+      </div>
+      <div class="form-group">
+        <label>Service Interested In</label>
+        <select>
+          <option value="">Select a service…</option>
+          <option>Assisted Living</option>
+          <option>Memory Care</option>
+          <option>Home Nursing</option>
+          <option>Day Care Program</option>
+          <option>Medical & Geriatric Care</option>
+          <option>Wellness & Rehabilitation</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell us about your loved one's needs</label>
+        <textarea placeholder="Share any details that would help us prepare for our conversation…"></textarea>
+      </div>
+      <button class="form-submit" onclick="alert('Thank you! Our care advisor will contact you within 24 hours.')">Submit Request →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Tranquil Retreat Logo" style="height: 48px; margin-bottom: 12px; filter: brightness(0) invert(1);">
+      <h2>Tranquil Retreat</h2>
+      <span>Elder Care Centre</span>
+      <p>Compassionate, professional, and personalised elder care that honours every senior's dignity, comfort, and joy of living.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">📘</a>
+        <a href="#" class="social-link">📸</a>
+        <a href="#" class="social-link">🐦</a>
+        <a href="#" class="social-link">💼</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="service-assisted-living.html">Assisted Living</a></li>
+        <li><a href="service-memory-care.html">Memory Care</a></li>
+        <li><a href="service-home-nursing.html">Home Nursing</a></li>
+        <li><a href="service-day-care.html">Day Care Program</a></li>
+        <li><a href="service-medical-care.html">Medical Care</a></li>
+        <li><a href="service-wellness.html">Wellness Programs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="blog.html">Blog & Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><a href="tel:+919876543210">📞 +91 98765 43210</a></li>
+        <li><a href="mailto:care@tranquilretreat.in">✉ care@tranquilretreat.in</a></li>
+        <li><a href="#">📍 India (Multiple Locations)</a></li>
+        <li><a href="#">⏰ Mon–Sun: 8 AM – 8 PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Tranquil Retreat Elder Care Centre. All rights reserved.</span>
+    <span>
+      <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+      <a href="#">Terms of Service</a> &nbsp;|&nbsp;
+      <a href="#">Sitemap</a>
+    </span>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

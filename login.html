@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | TRANQUIL RETREAT Portals</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f9fbf8 0%, #f0f7ec 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .login-container {
+            width: 100%;
+            max-width: 450px;
+            background: var(--surface);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .login-form-area {
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            .login-form-area { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="global-preloader" style="position: fixed; inset: 0; background: #F9F6F0; z-index: 99999; display: flex; align-items: center; justify-content: center; transition: opacity 0.6s ease, visibility 0.6s ease;">
+        <img src="images/logo.png" alt="Loading Tranquil Retreat..." style="height: 100px; animation: pulseLogo 1.5s infinite ease-in-out;">
+        <style>
+            @keyframes pulseLogo {
+                0% { transform: scale(0.95); opacity: 0.7; filter: drop-shadow(0 0 10px rgba(201,162,39,0.3)); }
+                50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 25px rgba(201,162,39,0.9)); }
+                100% { transform: scale(0.95); opacity: 0.7; filter: drop-shadow(0 0 10px rgba(201,162,39,0.3)); }
+            }
+        </style>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('global-preloader');
+            if(preloader) {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+                setTimeout(() => preloader.remove(), 600);
+            }
+        });
+    </script>
+
+    <div class="login-container animate-fade-in">
+        <div class="login-form-area">
+            <div class="mb-8">
+                <a href="index.html" class="nav-brand mb-6" style="justify-content: flex-start;">
+                    <img src="images/logo.png" alt="Tranquil Retreat Logo" style="height: 32px;"> TRANQUIL RETREAT
+                </a>
+                <h2>Welcome back</h2>
+                <p>Please enter your credentials to access your portal.</p>
+            </div>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="form-label" for="roleType">Portal Identity</label>
+                    <select id="roleType" class="form-control" required>
+                        <option value="guardian">Patient Guardian / Parent</option>
+                        <option value="admin">Hospital Administrator / CMS</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Email / ID Number</label>
+                    <div style="position: relative;">
+                        <i class="ph ph-envelope" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                        <input type="text" id="email" class="form-control" placeholder="Enter your ID or Email" style="padding-left: 2.75rem;" required value="demo@carelink.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <div style="position: relative;">
+                        <i class="ph ph-lock" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                        <input type="password" id="password" class="form-control" placeholder="••••••••" style="padding-left: 2.75rem;" required value="password123">
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center mb-6">
+                    <label class="flex items-center gap-2 text-sm cursor-pointer">
+                        <input type="checkbox" checked class="form-control" style="width: auto; height: auto;"> Remember me
+                    </label>
+                    <a href="#" class="text-sm text-primary font-semibold">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" style="padding: 1rem; font-size: 1rem;">
+                    Secure Login <i class="ph ph-arrow-right"></i>
+                </button>
+            </form>
+            
+            <p class="text-sm text-center mt-8 text-muted">
+                Need an account? Guardians, please contact the front desk during admission.
+            </p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
